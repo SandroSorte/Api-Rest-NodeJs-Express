@@ -1,12 +1,14 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const port = 3000
 
 //Rota padrão
 app.get('/', (req, res) => {
-  res.send('Seja bem vindo aos conhecimentos do NodeJs com o Framework Express')
+  res.send('Hello World')
 })
 
-app.listen(port, () => {
-  console.log(`Servidor rodando no endereço http://localhost:${port}`)
+app.get('/planos',(req, res)=>{
+res.send(' Listas de requisições futuras')
 })
+
+export default app
+
