@@ -42,5 +42,13 @@ app.delete('/cadastro/:id', (req, res)=>{
   res.send(`cadastro com id ${req.params.id} removido com sucesso`)
 })
 
+app.put('/cadastro/:id', (req, res)=>{
+  let index = buscarIndexPorId(req.params.id)
+  cadastro[index].nome = req.body.nome
+  cadastro[index].idade = req.body.idade
+  cadastro[index].signo = req.body.signo
+  res.json(cadastro)
+})
+
 export default app
 
